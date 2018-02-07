@@ -1,3 +1,4 @@
+
 # Automation - Calendar
 
 Example config.json:
@@ -17,7 +18,7 @@ Example config.json:
 This accessory will create a fake sensor with some custom characteristics.
 Use one or more characteristic to limit the automation to a specific period of time (e.g. only during the winter or only during the day).
 
-## Configuration
+## Configuration
 
 * `latitude` your home latitude (used for astronomical calculations); e.g. *-33.8567844*
 * `longitude` your home longitude (used for astronomical calculations); e.g. *151.2152967*
