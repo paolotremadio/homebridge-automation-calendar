@@ -1,0 +1,38 @@
+{
+  "name": "homebridge-automation-calendar",
+  "version": "0.0.1",
+  "description": "Useful calendar information for HomeKit automations (seasons, week of the year, month of the year, morning twilight/sunrise/daytime/sunset/evening twilight/night)",
+  "license": "ISC",
+  "keywords": [
+    "homebridge-plugin"
+  ],
+  "author": {
+    "name": "Paolo Tremadio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paolotremadio/homebridge-automation-calendar.git"
+  },
+  "bugs": {
+    "url": "http://github.com/paolotremadio/homebridge-automation-calendar/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0",
+    "homebridge": ">=0.4.0"
+  },
+  "dependencies": {
+    "date-season": "^0.0.2",
+    "debug": "^3.1.0",
+    "hap-nodejs": "^0.4.28",
+    "moment": "^2.20.1",
+    "suncalc": "^1.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  },
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js . --ext .js"
+  }
+}
