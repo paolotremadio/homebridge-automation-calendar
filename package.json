@@ -1,6 +1,6 @@
 {
   "name": "homebridge-automation-calendar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Useful calendar information for HomeKit automations (seasons, week of the year, month of the year, morning twilight/sunrise/daytime/sunset/evening twilight/night)",
   "license": "ISC",
   "keywords": [

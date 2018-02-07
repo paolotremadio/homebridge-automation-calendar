@@ -82,12 +82,12 @@ class AutomationCalendar {
 
   getTimeOfDayName() {
     const names = {
-      0: 'Night',
       1: 'Morning Twilight',
       2: 'Sunrise',
       3: 'Daytime',
       4: 'Sunset',
       5: 'Evening Twilight',
+      6: 'Night',
     };
 
     return names[this.getTimeOfDay()];
