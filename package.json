@@ -25,7 +25,8 @@
     "debug": "^3.1.0",
     "hap-nodejs": "^0.4.28",
     "moment": "^2.20.1",
-    "suncalc": "^1.8.0"
+    "suncalc": "^1.8.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "eslint": "^4.16.0",
@@ -33,6 +34,9 @@
     "eslint-plugin-import": "^2.8.0"
   },
   "scripts": {
-    "lint": "./node_modules/eslint/bin/eslint.js . --ext .js"
-  }
+    "lint": "./node_modules/eslint/bin/eslint.js . --ext .js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
