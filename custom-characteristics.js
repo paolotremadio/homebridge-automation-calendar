@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 const { Characteristic } = require('hap-nodejs');
 
 const MonthOfYearUUID = '3470e956-0bfd-11e8-ba89-0ed5f89f718b';
