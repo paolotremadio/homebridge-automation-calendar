@@ -1,10 +1,12 @@
 const moment = require('moment');
 const debug = require('debug')('homebridge-automation-calendar');
 const seasonCalculator = require('date-season');
-const CustomCharacteristics = require('./custom-characteristics');
+const InitCustomCharacteristics = require('./custom-characteristics');
 const timeOfDayCalculator = require('./time-of-day');
 
 let Service;
+let Characteristic;
+let CustomCharacteristics;
 
 class AutomationCalendar {
   constructor(log, config) {
@@ -17,6 +19,8 @@ class AutomationCalendar {
     this.hemisphere = config.latitude >= 0 ? 'north' : 'south';
 
     debug(`Using astronomic calendar to get current season - ${this.hemisphere} hemisphere`);
+
+    CustomCharacteristics = InitCustomCharacteristics(Characteristic);
 
     this.motionService = new Service.MotionSensor(this.name);
 
@@ -128,6 +132,7 @@ class AutomationCalendar {
 
 module.exports = (homebridge) => {
   Service = homebridge.hap.Service; // eslint-disable-line
+  Characteristic = homebridge.hap.Characteristic; // eslint-disable-line
 
   homebridge.registerAccessory('homebridge-automation-calendar', 'AutomationCalendar', AutomationCalendar);
 };
