@@ -58,3 +58,6 @@ The time of the day, based on the latitude/longitude provided.
 
 ### Time of the day label
 The label for the current type of the day (it cannot be used for automation, use the **Time of the day** characteristic instead).
+
+### How to access the characteristics
+The native Home app does not display all other characteristics. For that you have to use the Home+ or Eve app.
