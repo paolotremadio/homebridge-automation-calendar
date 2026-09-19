@@ -1,0 +1,42 @@
+{
+  "pluginAlias": "AutomationCalendar",
+  "pluginType": "accessory",
+  "singular": false,
+  "strictValidation": true,
+  "schema": {
+    "type": "object",
+    "required": [
+      "name",
+      "latitude",
+      "longitude"
+    ],
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "Automation Calendar",
+        "description": "The name shown for this accessory in Homebridge and HomeKit."
+      },
+      "latitude": {
+        "title": "Latitude",
+        "type": "number",
+        "minimum": -90,
+        "maximum": 90,
+        "x-inputAttributes": {
+          "step": "any"
+        },
+        "description": "The latitude used for astronomical calculations."
+      },
+      "longitude": {
+        "title": "Longitude",
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180,
+        "x-inputAttributes": {
+          "step": "any"
+        },
+        "description": "The longitude used for astronomical calculations."
+      }
+    }
+  }
+}
