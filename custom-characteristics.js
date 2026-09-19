@@ -1,14 +1,19 @@
-const init = (Characteristic) => {
+const init = (hap) => {
+  const { Characteristic } = hap;
+  const Formats = hap.Formats || Characteristic.Formats;
+  const Perms = hap.Perms || Characteristic.Perms;
+  const readPermission = Perms.PAIRED_READ || Perms.READ;
+
   const MonthOfYearUUID = '3470e956-0bfd-11e8-ba89-0ed5f89f718b';
   const MonthOfYear = function () {
     const char = new Characteristic('Month of the year', MonthOfYearUUID);
 
     char.setProps({
-      format: Characteristic.Formats.UINT8,
+      format: Formats.UINT8,
       maxValue: 12,
       minValue: 1,
       minStep: 1,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      perms: [readPermission, Perms.NOTIFY],
     });
     char.value = char.getDefaultValue();
 
@@ -21,11 +26,11 @@ const init = (Characteristic) => {
     const char = new Characteristic('Week of the year', WeekOfYearUUID);
 
     char.setProps({
-      format: Characteristic.Formats.UINT8,
+      format: Formats.UINT8,
       maxValue: 52,
       minValue: 1,
       minStep: 1,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      perms: [readPermission, Perms.NOTIFY],
     });
     char.value = char.getDefaultValue();
 
@@ -38,11 +43,11 @@ const init = (Characteristic) => {
     const char = new Characteristic('Season', SeasonUUID);
 
     char.setProps({
-      format: Characteristic.Formats.UINT8,
+      format: Formats.UINT8,
       maxValue: 4,
       minValue: 1,
       minStep: 1,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      perms: [readPermission, Perms.NOTIFY],
     });
     char.value = char.getDefaultValue();
 
@@ -55,8 +60,8 @@ const init = (Characteristic) => {
     const char = new Characteristic('Season name', SeasonNameUUID);
 
     char.setProps({
-      format: Characteristic.Formats.STRING,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      format: Formats.STRING,
+      perms: [readPermission, Perms.NOTIFY],
     });
     char.value = char.getDefaultValue();
 
@@ -69,11 +74,11 @@ const init = (Characteristic) => {
     const char = new Characteristic('Time of the day', TimeOfDayUUID);
 
     char.setProps({
-      format: Characteristic.Formats.UINT8,
+      format: Formats.UINT8,
       maxValue: 6,
       minValue: 1,
       minStep: 1,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      perms: [readPermission, Perms.NOTIFY],
     });
     char.value = char.getDefaultValue();
 
@@ -86,8 +91,8 @@ const init = (Characteristic) => {
     const char = new Characteristic('Time of the day label', TimeOfDayNameUUID);
 
     char.setProps({
-      format: Characteristic.Formats.STRING,
-      perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY],
+      format: Formats.STRING,
+      perms: [readPermission, Perms.NOTIFY],
     });
     char.value = char.getDefaultValue();
 

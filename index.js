@@ -5,7 +5,7 @@ const InitCustomCharacteristics = require('./custom-characteristics');
 const timeOfDayCalculator = require('./time-of-day');
 
 let Service;
-let Characteristic;
+let HAP;
 let CustomCharacteristics;
 
 class AutomationCalendar {
@@ -20,7 +20,7 @@ class AutomationCalendar {
 
     debug(`Using astronomic calendar to get current season - ${this.hemisphere} hemisphere`);
 
-    CustomCharacteristics = InitCustomCharacteristics(Characteristic);
+    CustomCharacteristics = InitCustomCharacteristics(HAP);
 
     this.motionService = new Service.MotionSensor(this.name);
 
@@ -131,8 +131,8 @@ class AutomationCalendar {
 }
 
 module.exports = (homebridge) => {
-  Service = homebridge.hap.Service; // eslint-disable-line
-  Characteristic = homebridge.hap.Characteristic; // eslint-disable-line
+  HAP = homebridge.hap; // eslint-disable-line
+  Service = HAP.Service; // eslint-disable-line
 
   homebridge.registerAccessory('homebridge-automation-calendar', 'AutomationCalendar', AutomationCalendar);
 };
