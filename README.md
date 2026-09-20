@@ -8,8 +8,8 @@ Example config.json:
         {
             "accessory": "AutomationCalendar",
             "name": "Test",
-            "latitude": 51.4825747,
-            "longitude": -0.0251685
+            "latitude": 51.4769,
+            "longitude": -0.0005
         }  
     ]
 
@@ -20,8 +20,12 @@ Use one or more characteristic to limit the automation to a specific period of t
 
 ## Configuration
 
-* `latitude` your home latitude (used for astronomical calculations); e.g. *-33.8567844*
-* `longitude` your home longitude (used for astronomical calculations); e.g. *151.2152967*
+The accessory can be configured through the Homebridge UI or manually in `config.json`.
+
+The example above uses the public coordinates of the Royal Observatory Greenwich. Replace them with the coordinates for your location.
+
+* `latitude` your latitude (used for astronomical calculations); public example: *51.4769*
+* `longitude` your longitude (used for astronomical calculations); public example: *-0.0005*
 
 ## Characteristics exposed
 
