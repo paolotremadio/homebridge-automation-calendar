@@ -21,10 +21,10 @@
     "homebridge": ">=0.4.0"
   },
   "dependencies": {
-    "date-season": "^0.0.2",
+    "date-season": "0.0.2",
     "debug": "^4.1.1",
     "moment": "^2.27.0",
-    "suncalc": "^1.8.0"
+    "suncalc": "1.8.0"
   },
   "devDependencies": {
     "eslint": "^4.16.0",
